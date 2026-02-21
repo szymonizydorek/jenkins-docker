@@ -1,0 +1,19 @@
+# Historia i logi terminala
+.bash_history
+.bash_logout
+.bashrc
+.lesshst
+.profile
+.sudo_as_admin_successful
+.viminfo
+
+# Foldery konfiguracyjne (Mogą zawierać SEKRETY!)
+.cache/
+.docker/
+.gitconfig
+.kube/
+.ssh/
+.minikube/
+
+# Pliki binarne i instalatory
+minikube-linux-amd64
