@@ -33,5 +33,6 @@ pipeline {
                 echo 'Scanning image with Trivy ...'
                     sh "trivy --version"
         }
+      }  
     }
 }
