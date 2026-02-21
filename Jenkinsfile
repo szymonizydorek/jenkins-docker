@@ -20,9 +20,9 @@ pipeline {
 	}
         stage('Docker Build') {
             steps {
-                echo 'Running docker build command...
+                echo 'Running docker build command...'
                 sh 'docker build -t {IMAGE_NAME} .'
-        	}
+             }
 	}
     }
 }
