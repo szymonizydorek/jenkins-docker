@@ -24,15 +24,17 @@ pipeline {
             steps {
                 echo 'Running docker build command...'
                 dir('flask-hello-lab') {
-                    sh "docker build -t ${IMAGE_NAME} ."
-                    sh "docker image ls"
+                    sh "docker build -t ${IMAGE_NAME}:latest ."
                 }
             }
+        } 
+
         stage('Security Scan (Trivy)') {
             steps {
-                echo 'Scanning image with Trivy ...'
-                    sh "trivy --version"
+                echo "Scanning image ${IMAGE_NAME} with Trivy..."
+
+                sh "trivy image --severity HIGH,CRITICAL ${IMAGE_NAME}:latest"
+            }
         }
-      }  
     }
 }
