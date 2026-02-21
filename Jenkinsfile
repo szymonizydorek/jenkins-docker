@@ -25,6 +25,7 @@ pipeline {
                 echo 'Running docker build command...'
                 dir('flask-hello-lab') {
                     sh "docker build -t ${IMAGE_NAME} ."
+                    sh "docker image ls"
                 }
             }
         }
