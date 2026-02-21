@@ -20,5 +20,4 @@ pipeline {
                 sh "trivy image --severity HIGH,CRITICAL ${IMAGE_NAME}:latest"
             }
         }
-    }
 }
