@@ -4,22 +4,6 @@ pipeline {
     environment {
         IMAGE_NAME = "flask-lab-training"
     }
-
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
-        stage('Intro Message') {
-            steps {
-                echo 'This is Docker Lab'
-                sh 'date'
-                sh 'echo "Running user: $(whoami)"'
-            }
-        }
-
         stage('Docker Build') {
             steps {
                 echo 'Running docker build command...'
