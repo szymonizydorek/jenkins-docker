@@ -2,12 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello World') {
+        stage('Intro Message') {
             steps {
-                echo '=== TRIGGER DZIAŁA! ==='
-                echo 'Witaj w świecie automatyzacji!'
+                echo 'This is Docker Lab'
                 sh 'date'
-                sh 'echo "Uruchomione przez: $(whoami)"'
+                sh 'echo "Running user: $(whoami)"'
             }
         }
     }
