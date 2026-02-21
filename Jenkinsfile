@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "flask-lab-szkolenie"
+        IMAGE_NAME = "flask-lab-training"
     }
 
     stages {
@@ -28,6 +28,10 @@ pipeline {
                     sh "docker image ls"
                 }
             }
+        stage('Security Scan (Trivy)') {
+            steps {
+                echo 'Scanning image with Trivy ...'
+                    sh "trivy --version"
         }
     }
 }
