@@ -34,8 +34,8 @@ pipeline {
             steps {
               sh """
                 echo "Pushing image ${IMAGE_NAME} to ${PRIVATE_REGISTRY}...
-                docker tag ${IMAGE_NAME}:latest ${REGISTRY}/${IMAGE_NAME}:latest
-                docker push ${REGISTRY}/${IMAGE_NAME}:latest
+                docker tag ${IMAGE_NAME}:latest ${PRIVATE_REGISTRY}/${IMAGE_NAME}:latest
+                docker push ${PRIVATE_REGISTRY}/${IMAGE_NAME}:latest
                 """
             }
         }
