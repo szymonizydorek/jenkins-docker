@@ -29,7 +29,7 @@ pipeline {
     post { // <-OPENINING POST
 
     always {
-
+      cho "Pipeline finished."
     }
 
     failure {
