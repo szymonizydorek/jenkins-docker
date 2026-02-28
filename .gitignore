@@ -17,3 +17,4 @@
 
 # Pliki binarne i instalatory
 minikube-linux-amd64
+bin/trivy
