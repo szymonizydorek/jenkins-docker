@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "flask-lab-training"
-        REPORT_NAME = "trivy-report-$(date +'%Y-%m-%d_%H-%M).txt"
+        REPORT_NAME = "trivy-report.txt"
         PRIVATE_REGISTRY= "172.31.29.60:5000"
     }
 
