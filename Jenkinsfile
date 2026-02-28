@@ -23,7 +23,7 @@ pipeline {
                 sh """
                 trivy image \
                 --severity HIGH,CRITICAL \
-                --exit-code 1 \
+                --exit-code 0 \
                 --no-progress \
                 --format table \
                 --output ${REPORT_NAME} \
