@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+  clair:
+    image: quay.io/coreos/clair:latest
+    container_name: clair
+    restart: unless-stopped
+    ports:
+      - "6060-6061:6060-6061"
+    environment:
+      - CLAIR_DB_HOST=postgres
+      - CLAIR_DB_PORT=5432
+      - CLAIR_DB_USER=clair
+      - CLAIR_DB_PASSWORD=clairpassword
+      - CLAIR_DB_NAME=clair
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:13
+    container_name: clair-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: clair
+      POSTGRES_PASSWORD: clairpassword
+      POSTGRES_DB: clair
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

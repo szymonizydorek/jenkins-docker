@@ -9,7 +9,7 @@ pipeline {
 
      stages {    // <-- OPEN STAGES
 
-        stage('Docker Build') {
+        stage('Dcker Build') {
             steps {
                 echo 'Running docker build command...'
                 dir('flask-hello-lab') {
